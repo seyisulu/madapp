@@ -29,10 +29,10 @@
 	background: none;
 	background-image: url('{{ URL::asset('img/s1.png') }}'), url('{{ URL::asset('img/s2.png') }}'), url('{{ URL::asset('img/s3.png') }}');
 
-	-webkit-animation: snow 10s linear infinite;
-	-moz-animation: snow 10s linear infinite;
-	-ms-animation: snow 10s linear infinite;
-	animation: snow 10s linear infinite;
+	-webkit-animation: snow 30s linear infinite;
+	-moz-animation: snow 30s linear infinite;
+	-ms-animation: snow 30s linear infinite;
+	animation: snow 30s linear infinite;
 }
 @keyframes snow {
   0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
