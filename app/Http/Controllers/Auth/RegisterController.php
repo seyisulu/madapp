@@ -2,7 +2,7 @@
 
 namespace MadComics\Http\Controllers\Auth;
 
-use MadComics\User;
+use MadComics\Models\User;
 use MadComics\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -48,8 +48,9 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+            'name' => 'required|max:191',
+            'email' => 'required|email|max:191|unique:users',
+            'phone' => 'required|regex:/\+?[0-9]{9,13}/',
             'password' => 'required|min:6|confirmed',
         ]);
     }
@@ -65,7 +66,10 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'phone' => $data['phone'],
             'password' => bcrypt($data['password']),
+            'admin' => 0,
+            'optin' => isset($data['optin'])? $data['optin']: 1,
         ]);
     }
 }

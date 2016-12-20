@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => MadComics\User::class,
+            'model' => MadComics\Models\User::class,
         ],
 
         // 'users' => [
