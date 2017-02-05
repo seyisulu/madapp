@@ -30,5 +30,6 @@ describe('Mad Comics App', function () {
                         ->see('Mad Comics')
 	                ->assertResponseOk())->toBeTruthy();
         });
+        
     });
 });

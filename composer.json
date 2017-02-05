@@ -45,7 +45,9 @@
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
             "php artisan optimize"
         ],
-	"test": "kahlan --reporter=verbose --coverage=3 --src=app"
+        "test": "phpunit",
+	    "testkl": "kahlan --reporter=verbose",
+        "testcov": "kahlan --reporter=verbose --coverage=3 --src=app"
     },
     "config": {
         "preferred-install": "dist"

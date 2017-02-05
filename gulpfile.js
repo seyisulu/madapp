@@ -17,13 +17,13 @@ require('laravel-elixir-vue-2');
 
 elixir((mix) => {
   mix
-   .copy('resources/assets/js/masonry.pkgd.min.js', 'public/js/masonry.pkgd.min.js')
-   .copy('resources/assets/img', 'public/img')
-   .copy('resources/assets/favicon', 'public/favicon')
-   .copy('resources/assets/favicon/favicon.ico', 'public/favicon.ico')
-   .copy('resources/assets/semantic/dist/themes/default/assets', 'public/build/css/themes/default/assets')
-   .copy('resources/assets/semantic/dist/semantic.min.js', 'public/js/semantic.min.js')
-   .copy('resources/assets/semantic/dist/semantic.css', 'resources/assets/css/semantic.css')
+   .copy('resources/assets/js/masonry.pkgd.min.js', 'public/js/masonry.pkgd.min.js')//-
+   .copy('resources/assets/img', 'public/img')//-
+   .copy('resources/assets/favicon', 'public/favicon')//-
+   .copy('resources/assets/favicon/favicon.ico', 'public/favicon.ico')//-
+   .copy('resources/assets/semantic/dist/themes/default/assets', 'public/build/css/themes/default/assets')//-
+   .copy('resources/assets/semantic/dist/semantic.min.js', 'public/js/semantic.min.js')//-
+   .copy('resources/assets/semantic/dist/semantic.css', 'resources/assets/css/semantic.css')//-
    .styles(['semantic.css', 'main.css']) //public/css/all.css
    .webpack('main.js')
    .webpack('app.js')
@@ -34,5 +34,5 @@ elixir((mix) => {
      'public/js/app.js'
    ], 'public/js/all.js') //all.js
    .version(['css/all.css', 'js/all.js']);
-  //mix.phpUnit();
+  //.phpUnit();
 });

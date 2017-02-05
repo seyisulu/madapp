@@ -60,7 +60,7 @@
       </form>
 
       <div class="ui message">
-        New user? <a href="{{ url('/register') }}">Register</a>
+        <a href="{{ url('/register') }}">Register</a> | <a href="{{ url('/password/reset') }}">Forgot Password</a>
       </div>
     </div>
   </div>

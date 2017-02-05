@@ -18,3 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::pattern('comicSlug', '[a-z\-]+');
+Route::pattern('volumeId', '\d+');
+Route::pattern('issueId', '\d+');
+Route::get('/comics/{comicSlug}/{volumeId}/{issueId}', 'ComicController@read')->name('read');
+
+Route::resource('comics', 'ComicController', [ 'only' => ['index', 'show']]);

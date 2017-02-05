@@ -38,7 +38,7 @@
                   <div class="content"><a href="{{ url('/comics/view') }}" class="header">Oro</a>
                     <div class="meta"><span class="date">A story of pain &amp; revenge...</span></div>
                   </div>
-                  <div class="extra content"><a href="{{ url('/comics/read') }}"><i class="low vision icon"></i>Read Issue</a></div>
+                  <div class="extra content"><a href="{{ url('/comics/read') }}"><i class="unhide icon"></i>Read Issue</a></div>
                 </div>
               </div>
             </div>

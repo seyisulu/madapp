@@ -11,17 +11,14 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 describe('Comics Test', function () {
 
   beforeAll(function () {
-    $this->laravel->artisan('migrate');
-    $this->laravel->artisan('db:seed');
+    //$this->laravel->artisan('migrate');
+    //$this->laravel->artisan('db:seed');
   });
 
-  using(['database transactions'], function () {
+  //using(['database transactions'], function () {
 
-    it('verifies that the comic index lists comics', function () {
-      expect($this->laravel
-                  ->get('/comics')
-                  ->see('Mad Comics')
-                  ->assertResponseOk())->toBeTruthy();
+    fit('verifies that the comics page lists comics', function () {
+
     });
-  });
+  //});
 });
