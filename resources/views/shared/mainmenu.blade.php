@@ -4,6 +4,9 @@
     <a href="{{ url('/') }}" class="active item">Home</a>
     <a href="{{ url('/comics') }}" class="item">Comics</a>
     <a href="{{ url('/about') }}" class="item">About</a>
+    @if (auth()->user() && auth()->user()->hasPermission('browse_admin'))
+      <a href="{{ url('/admin') }}" class="item">Admin</a>
+    @endif
     <a href="/contact" class="item">Contact</a>
     <div class="right item">
       @if (Auth::check())

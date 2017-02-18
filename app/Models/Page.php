@@ -41,4 +41,9 @@ class Page extends Model
   {
     return $this->belongsTo('MadComics\Models\Issue');
   }
+
+  public function issueId()
+  {
+   return $this->belongsTo('MadComics\Models\Issue');
+  }
 }

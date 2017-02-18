@@ -167,7 +167,8 @@ return [
          * Package Service Providers...
          */
 
-        //
+        TCG\Voyager\VoyagerServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
         /*
          * Application Service Providers...

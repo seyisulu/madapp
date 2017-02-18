@@ -25,3 +25,7 @@ Route::pattern('issueId', '\d+');
 Route::get('/comics/{comicSlug}/{volumeId}/{issueId}', 'ComicController@read')->name('read');
 
 Route::resource('comics', 'ComicController', [ 'only' => ['index', 'show']]);
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

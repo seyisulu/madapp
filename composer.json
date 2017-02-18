@@ -7,7 +7,10 @@
     "require": {
         "php": ">=5.6.4",
         "laravel/framework": "5.3.*",
-        "tcg/voyager": "^0.10.13"
+        "tcg/voyager": "^0.10.15",
+        "league/flysystem": "1.0.35",
+        "iatstuti/laravel-cascade-soft-deletes": "1.0.*",
+        "spatie/laravel-backup": "^4.6"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

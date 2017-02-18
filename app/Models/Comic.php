@@ -9,6 +9,17 @@ class Comic extends Model
 {
   use SoftDeletes;
 
+  protected static function boot() {
+    parent::boot();
+
+    static::deleting(function($m) {
+      $m->volumes()->delete();
+    });
+    static::restored(function($m) {
+      $m->volumes()->withTrashed()->restore();
+    });
+  }
+
   protected $dates = [
     'deleted_at',
     'created_at',

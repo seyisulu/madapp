@@ -9,6 +9,17 @@ class Volume extends Model
 {
   use SoftDeletes;
 
+  protected static function boot() {
+    parent::boot();
+
+    static::deleting(function($m) {
+      $m->issues()->delete();
+    });
+    static::restored(function($m) {
+      $m->issues()->withTrashed()->restore();
+    });
+  }
+
   protected $dates = [
     'deleted_at',
     'created_at',
@@ -54,6 +65,11 @@ class Volume extends Model
   public function comic()
   {
     return $this->belongsTo(Comic::class);
+  }
+  // For tcg/voyager
+  public function comicId()
+  {
+   return $this->belongsTo(Comic::class);
   }
 
   /**

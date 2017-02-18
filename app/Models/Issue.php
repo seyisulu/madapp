@@ -9,6 +9,17 @@ class Issue extends Model
 {
   use SoftDeletes;
 
+  protected static function boot() {
+    parent::boot();
+
+    static::deleting(function($m) {
+      $m->pages()->delete();
+    });
+    static::restored(function($m) {
+      $m->pages()->withTrashed()->restore();
+    });
+  }
+
   protected $dates = [
     'deleted_at',
     'created_at',
@@ -54,6 +65,11 @@ class Issue extends Model
   public function volume()
   {
     return $this->belongsTo(Volume::class);
+  }
+
+  public function volumeId()
+  {
+   return $this->belongsTo(Volume::class);
   }
 
   /**
